@@ -56,7 +56,7 @@ vim.cmd([[
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_autocmd("highlight_yank", {}),
+	group = vim.api.nvim_create_augroup("highlight_yank", {}),
 	callback = function()
 		(vim.hl or vim.highlight).on_yank()
 	end,
@@ -67,4 +67,5 @@ vim.keymap.set("n", "<Esc>", ":qa!<CR>", { silent = true })
 vim.keymap.set("n", "g", "gg", { silent = true })
 vim.keymap.set("n", "G", "G", { silent = true })
 
+vim.bo.filetype = "ansi"
 vim.cmd("normal G")
