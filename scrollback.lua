@@ -29,26 +29,27 @@ for _, plugin in ipairs(disabled) do
 	vim.g["loaded_" .. plugin] = 1
 end
 
-vim.opt.readonly = true
-vim.opt.modifiable = false
-vim.opt.number = false
-vim.opt.relativenumber = false
-vim.opt.cursorline = false
-vim.opt.laststatus = 0
-vim.opt.showmode = false
-vim.opt.ruler = false
-vim.opt.showcmd = false
-vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
-vim.opt.grepprg = "rg --vimgrep"
-vim.opt.ignorecase = true
-vim.opt.laststatus = 0
-vim.opt.smartcase = true
-vim.opt.undofile = false
+vim.o.readonly = true
+vim.o.modifiable = false
+vim.o.number = false
+vim.o.relativenumber = false
+vim.o.cursorline = false
+vim.o.laststatus = 0
+vim.o.showmode = false
+vim.o.ruler = false
+vim.o.showcmd = false
+vim.o.termguicolors = true
+vim.o.clipboard = "unnamedplus"
+vim.o.grepprg = "rg --vimgrep"
+vim.o.ignorecase = true
+vim.o.laststatus = 0
+vim.o.smartcase = true
+vim.o.undofile = false
+vim.o.eventignore = "FileType"
 
 vim.cmd("syntax off")
 
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 vim.cmd([[
   highlight clear
   highlight Normal guibg=none
@@ -67,5 +68,4 @@ vim.keymap.set("n", "<Esc>", ":qa!<CR>", { silent = true })
 vim.keymap.set("n", "g", "gg", { silent = true })
 vim.keymap.set("n", "G", "G", { silent = true })
 
-vim.bo.filetype = "ansi"
 vim.cmd("normal G")
